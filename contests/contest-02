@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contest #2 — MG CS Club Mock Contests (Unofficial)</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div>
+          <h1>Contest #2</h1>
+          <p class="subtitle">Unofficial • Not affiliated with MGCI • A–E difficulty ladder</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        Today’s vibe: “the courtyard is a grid,” “the lockers are cursed,” and “the bell schedule is unstoppable.”
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html">← Home</a>
+        <a href="#problems">Problems</a>
+        <a href="#solutions">Solutions</a>
+      </nav>
+
+      <div class="toc">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="problems" class="section">
+      <h2>Problems</h2>
+
+      <article class="problem" id="A">
+        <h3>Problem A — Bell Schedule Add</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~800</strong></span>
+          <span class="tag">Time math</span>
+        </div>
+        <p>
+          Bryan Yao checks the time and realizes the bell is already coming.
+          Given a time <code>HH:MM</code> and an integer <strong>x</strong> minutes to add, output the resulting time (wrap around midnight).
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>Line 1: <code>HH:MM</code></li>
+          <li>Line 2: integer <strong>x</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Resulting time <code>HH:MM</code></li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list"><li>0 ≤ x ≤ 10<sup>9</sup></li></ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>23:50
+35</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>00:25</code></pre>
+      </article>
+
+      <article class="problem" id="B">
+        <h3>Problem B — Snowy Courtyard</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1000</strong></span>
+          <span class="tag">Grid scan</span>
+        </div>
+        <p>
+          Jerry Chen looks outside and sees the courtyard has become a pixel-art grid of snow.
+          You are given an <strong>R×C</strong> grid of <code>.</code> and <code>#</code>.
+          Count how many <strong>2×2</strong> squares are completely <code>.</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: <strong>R</strong> <strong>C</strong></li>
+          <li>Next <strong>R</strong> lines: strings of length <strong>C</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>One integer</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list"><li>2 ≤ R, C ≤ 2000</li></ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>3 4
+..#.
+....
+.#..</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>2</code></pre>
+      </article>
+
+      <article class="problem" id="C">
+        <h3>Problem C — Library Next Taller Stack</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1100–1200</strong></span>
+          <span class="tag">Monotonic stack</span>
+        </div>
+        <p>
+          Michael Zhang is stacking textbooks in the library. For each stack, he wants to know the next stack to the right that’s taller.
+          Given heights <strong>h<sub>1</sub>..h<sub>N</sub></strong>, for each <strong>i</strong>, find the smallest index <strong>j &gt; i</strong> such that <strong>h<sub>j</sub> &gt; h<sub>i</sub></strong>.
+          If none exists, output <code>0</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integer <strong>N</strong></li>
+          <li>Second line: <strong>N</strong> integers <strong>h<sub>1</sub> … h<sub>N</sub></strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>N integers</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>1 ≤ h<sub>i</sub> ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>7
+2 7 3 5 4 6 1</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>2 0 4 6 6 0 0</code></pre>
+      </article>
+
+      <article class="problem" id="D">
+        <h3>Problem D — Garneau Wi-Fi Coverage</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1300–1400</strong></span>
+          <span class="tag">Greedy intervals</span>
+        </div>
+        <p>
+          The CS club wants Wi-Fi in the hallway (for totally academic reasons).
+          Positions are <strong>1..L</strong>. Hotspot <strong>i</strong> at <strong>p<sub>i</sub></strong> covers
+          <code>[p<sub>i</sub>-r<sub>i</sub>, p<sub>i</sub>+r<sub>i</sub>]</code> clamped to <code>[1,L]</code>.
+          Cover all positions 1..L with minimum hotspots, or output <code>-1</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>L</strong> <strong>N</strong></li>
+          <li>Next <strong>N</strong> lines: integers <strong>p<sub>i</sub></strong> <strong>r<sub>i</sub></strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minimum hotspots needed, or <code>-1</code></li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ L ≤ 10<sup>9</sup></li>
+          <li>1 ≤ N ≤ 200000</li>
+          <li>1 ≤ p<sub>i</sub> ≤ L</li>
+          <li>0 ≤ r<sub>i</sub> ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>10 3
+2 3
+6 2
+9 2</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>3</code></pre>
+      </article>
+
+      <article class="problem" id="E">
+        <h3>Problem E — Locker Light Switch</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1500–1600</strong></span>
+          <span class="tag">Greedy + parity diff</span>
+          <span class="tag">USACO Silver max</span>
+        </div>
+        <p>
+          Jerry Chen found a “smart locker” system. Unfortunately, it’s not smart.
+          You have a binary string <strong>S</strong> of length <strong>N</strong>.
+          An operation chooses <strong>i</strong> (1-indexed) with <strong>1 ≤ i ≤ N-K+1</strong> and flips every bit in <strong>S[i..i+K-1]</strong>.
+          Find the minimum operations to make all bits <code>0</code>, or output <code>-1</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong> <strong>K</strong></li>
+          <li>Second line: binary string <strong>S</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minimum operations, or <code>-1</code></li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list"><li>1 ≤ K ≤ N ≤ 200000</li></ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>8 3
+01101011</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>3</code></pre>
+      </article>
+    </section>
+
+    <section id="solutions" class="section">
+      <h2>Solutions (Reference)</h2>
+
+      <details>
+        <summary><strong>A — Bell Schedule Add</strong></summary>
+        <p><strong>Time:</strong> O(1). Convert to minutes, add, mod 1440.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    t = sys.stdin.readline().strip()
+    x = int(sys.stdin.readline())
+    hh = int(t[:2]); mm = int(t[3:])
+    total = (hh * 60 + mm + x) % 1440
+    print(f"{total//60:02d}:{total%60:02d}")
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>B — Snowy Courtyard</strong></summary>
+        <p><strong>Time:</strong> O(RC). Check each 2×2 block.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    R, C = map(int, sys.stdin.buffer.readline().split())
+    grid = [sys.stdin.buffer.readline().strip().decode() for _ in range(R)]
+    ans = 0
+    for i in range(R - 1):
+        for j in range(C - 1):
+            if grid[i][j] == '.' and grid[i][j+1] == '.' and grid[i+1][j] == '.' and grid[i+1][j+1] == '.':
+                ans += 1
+    print(ans)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>C — Library Next Taller Stack</strong></summary>
+        <p><strong>Time:</strong> O(N). Monotonic decreasing stack from right to left.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = list(map(int, sys.stdin.buffer.read().split()))
+    N = data[0]
+    h = data[1:]
+    ans = [0] * N
+    st = []  # indices, heights strictly increasing (from top perspective)
+
+    for i in range(N - 1, -1, -1):
+        while st and h[st[-1]] &lt;= h[i]:
+            st.pop()
+        ans[i] = (st[-1] + 1) if st else 0
+        st.append(i)
+
+    print(*ans)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>D — Garneau Wi-Fi Coverage</strong></summary>
+        <p><strong>Time:</strong> O(N log N). Greedy interval covering: always extend farthest among intervals starting before current.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = list(map(int, sys.stdin.buffer.read().split()))
+    L, N = data[0], data[1]
+    intervals = []
+    idx = 2
+    for _ in range(N):
+        p = data[idx]; r = data[idx+1]; idx += 2
+        l = max(1, p - r)
+        rr = min(L, p + r)
+        intervals.append((l, rr))
+
+    intervals.sort()
+    cur = 1
+    i = 0
+    best_r = 0
+    used = 0
+
+    while cur &lt;= L:
+        while i &lt; N and intervals[i][0] &lt;= cur:
+            if intervals[i][1] &gt; best_r:
+                best_r = intervals[i][1]
+            i += 1
+
+        if best_r &lt; cur:
+            print(-1)
+            return
+
+        used += 1
+        cur = best_r + 1
+
+    print(used)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>E — Locker Light Switch</strong></summary>
+        <p><strong>Time:</strong> O(N). Greedy left-to-right + difference array for flip parity.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = sys.stdin.buffer.read().split()
+    N = int(data[0]); K = int(data[1])
+    S = data[2].decode()
+
+    diff = [0] * (N + 1)
+    flip = 0
+    ops = 0
+
+    for i in range(N):
+        flip ^= diff[i]
+        bit = (ord(S[i]) - 48) ^ flip
+        if bit == 1:
+            if i + K &gt; N:
+                print(-1)
+                return
+            ops += 1
+            flip ^= 1
+            diff[i + K] ^= 1
+
+    print(ops)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small muted">
+      <a class="inline" href="../index.html">Home</a> · Contest #2
+    </div>
+  </footer>
+</body>
+</html>
