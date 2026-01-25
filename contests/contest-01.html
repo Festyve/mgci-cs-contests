@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contest #1 - MG CS Club Mock Contests (Unofficial)</title>
+  <title>Contest #1 - MG CS Club Mock Contests</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div class="logo">MG</div>
         <div>
           <h1>Contest #1</h1>
-          <p class="subtitle">Unofficial - Not affiliated with MGCI - A-E difficulty ladder</p>
+          <p class="subtitle">Unofficial &middot; Not affiliated with MGCI &middot; A-E difficulty ladder</p>
         </div>
       </div>
 
@@ -28,7 +28,11 @@
       </nav>
 
       <div class="toc">
-        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#E">E</a>
       </div>
     </div>
   </header>
@@ -38,7 +42,7 @@
       <h2>Problems</h2>
 
       <article class="problem" id="A">
-        <h3>Problem A - Locker Loop</h3>
+        <h3>Problem A &mdash; Locker Loop</h3>
         <div class="meta">
           <span class="tag"><strong>CF ~800</strong></span>
           <span class="tag">Implementation</span>
@@ -79,7 +83,7 @@
       </article>
 
       <article class="problem" id="B">
-        <h3>Problem B - Cafeteria Pairing</h3>
+        <h3>Problem B &mdash; Cafeteria Pairing</h3>
         <div class="meta">
           <span class="tag"><strong>CF ~1000</strong></span>
           <span class="tag">Greedy two pointers</span>
@@ -104,7 +108,7 @@
         <ul class="list">
           <li>1 &le; N &le; 200000</li>
           <li>1 &le; a<sub>i</sub> &le; 10<sup>9</sup></li>
-          <li>1 &le; C &le; 2*10<sup>9</sup></li>
+          <li>1 &le; C &le; 2 &times; 10<sup>9</sup></li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -116,7 +120,7 @@
       </article>
 
       <article class="problem" id="C">
-        <h3>Problem C - Holiday Show Badges</h3>
+        <h3>Problem C &mdash; Holiday Show Badges</h3>
         <div class="meta">
           <span class="tag"><strong>CF ~1100-1200</strong></span>
           <span class="tag">Ad-hoc validation</span>
@@ -126,16 +130,12 @@
           A badge code is a string <strong>S</strong> (length <strong>N</strong>) consisting of <code>G</code>, <code>M</code>, and <code>?</code>.
           Each <code>?</code> must be replaced with <code>G</code> or <code>M</code>.
         </p>
-        <p>
-          A badge code is valid if:
-        </p>
+        <p>A badge code is valid if:</p>
         <ul class="list">
           <li>It contains exactly <strong>N/2</strong> <code>G</code> and <strong>N/2</strong> <code>M</code> (so N must be even), and</li>
           <li>For every prefix, the number of <code>G</code> is at least the number of <code>M</code>.</li>
         </ul>
-        <p>
-          Determine if it's possible to replace all <code>?</code> to make <strong>S</strong> valid.
-        </p>
+        <p>Determine if it's possible to replace all <code>?</code> to make <strong>S</strong> valid.</p>
 
         <div class="block-title">Input</div>
         <ul class="list"><li>One line: string <strong>S</strong></li></ul>
@@ -157,7 +157,7 @@
       </article>
 
       <article class="problem" id="D">
-        <h3>Problem D - Club Room Booking</h3>
+        <h3>Problem D &mdash; Club Room Booking</h3>
         <div class="meta">
           <span class="tag"><strong>CF ~1300-1400</strong></span>
           <span class="tag">Sweep line</span>
@@ -198,7 +198,7 @@
       </article>
 
       <article class="problem" id="E">
-        <h3>Problem E - Garneau Shortcut Pass</h3>
+        <h3>Problem E &mdash; Garneau Shortcut Pass</h3>
         <div class="meta">
           <span class="tag"><strong>CF ~1500-1600</strong></span>
           <span class="tag">Dijkstra (2-state)</span>
@@ -250,7 +250,7 @@
       <h2>Solutions (Reference)</h2>
 
       <details>
-        <summary><strong>A - Locker Loop</strong></summary>
+        <summary><strong>A &mdash; Locker Loop</strong></summary>
         <p><strong>Idea:</strong> sum net movement delta, wrap with modulo. <strong>Time:</strong> O(N).</p>
         <div class="details-code">
           <pre><code>import sys
@@ -272,7 +272,7 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary><strong>B - Cafeteria Pairing</strong></summary>
+        <summary><strong>B &mdash; Cafeteria Pairing</strong></summary>
         <p><strong>Idea:</strong> sort + two pointers. If smallest+largest &le; C, pair them. <strong>Time:</strong> O(N log N).</p>
         <div class="details-code">
           <pre><code>import sys
@@ -298,7 +298,7 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary><strong>C - Holiday Show Badges</strong></summary>
+        <summary><strong>C &mdash; Holiday Show Badges</strong></summary>
         <p>
           <strong>Idea:</strong> Need exactly N/2 of each and all prefixes have #G &ge; #M.
           Replace earliest question marks with G until counts match, then fill rest with M, and validate prefixes.
@@ -346,7 +346,7 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary><strong>D - Club Room Booking</strong></summary>
+        <summary><strong>D &mdash; Club Room Booking</strong></summary>
         <p><strong>Idea:</strong> min rooms = max overlap. Sort starts/ends, sweep. <strong>Time:</strong> O(N log N).</p>
         <div class="details-code">
           <pre><code>import sys
@@ -380,7 +380,7 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary><strong>E - Garneau Shortcut Pass</strong></summary>
+        <summary><strong>E &mdash; Garneau Shortcut Pass</strong></summary>
         <p>
           <strong>Idea:</strong> Dijkstra with 2 states (pass used or not). From state 0 you may traverse normally or use pass once.
           <strong>Time:</strong> O((N+M) log N).
@@ -401,7 +401,7 @@ def main():
     dist0 = [INF]*(N+1)
     dist1 = [INF]*(N+1)
     dist0[1] = 0
-    pq = [(0, 1, 0)]  # (dist, node, used)
+    pq = [(0, 1, 0)]
 
     while pq:
         d, u, used = heapq.heappop(pq)
