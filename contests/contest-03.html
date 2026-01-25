@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contest #3 - MG CS Club Mock Contests (Unofficial)</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contest #3 · MGCI CS Club Mock Contests (Unofficial)</title>
+  <meta name="description" content="MGCI CS Club Mock Contest #3 (A–E) with statements, samples, and solutions." />
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container">
+    <div class="container header-row">
       <div class="brand">
-        <div class="logo">MG</div>
-        <div>
-          <h1>Contest #3</h1>
-          <p class="subtitle">Unofficial - Not affiliated with MGCI - A-E difficulty ladder</p>
+        <div class="logo" aria-hidden="true">MG</div>
+        <div class="brand-text">
+          <h1 class="site-title">Contest #3</h1>
+          <p class="site-subtitle">Unofficial · Not affiliated with MGCI · A–E difficulty ladder</p>
         </div>
       </div>
 
-      <div class="notice">
-        Today's theme: small string problems that are actually math!
-      </div>
-
-      <nav class="nav">
-        <a href="../index.html">&larr; Home</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
         <a href="#problems">Problems</a>
         <a href="#solutions">Solutions</a>
       </nav>
+    </div>
 
-      <div class="toc">
-        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
-      </div>
+    <div class="container">
+      <aside class="notice" role="note">
+        <div class="notice-title">Theme</div>
+        <div class="notice-body">Short statements, real technique: strings + prefix sums + sliding windows + a clean median trick.</div>
+        <div class="toc" aria-label="Problem navigation">
+          <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+        </div>
+      </aside>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <section id="problems" class="section">
-      <h2>Problems</h2>
+      <div class="section-head">
+        <h2>Problems</h2>
+      </div>
 
       <article class="problem" id="A">
-        <h3>Problem A - Late Slip Minutes</h3>
+        <h3>Problem A — Late Slip Minutes</h3>
         <div class="meta">
-          <span class="tag"><strong>CF ~800</strong></span>
+          <span class="tag">CF ~800</span>
           <span class="tag">Implementation</span>
         </div>
         <p>
-          Michael arrives at class. He keeps arriving late for some reason, please help him make a program to fix this!
-          Given the class start time and arrival time (both <code>HH:MM</code>), output how many minutes late he is.
-          If he arrives early or on time, output <code>0</code>.
+          Michael Zhang arrives at class. Given the class start time and arrival time (both <code>HH:MM</code>),
+          output how many minutes late he is. If he arrives early or on time, output <code>0</code>.
         </p>
 
         <div class="block-title">Input</div>
@@ -66,14 +73,14 @@
       </article>
 
       <article class="problem" id="B">
-        <h3>Problem B - Poster Printer</h3>
+        <h3>Problem B — Poster Printer</h3>
         <div class="meta">
-          <span class="tag"><strong>CF ~1000</strong></span>
+          <span class="tag">CF ~1000</span>
           <span class="tag">String scan</span>
         </div>
         <p>
-          Jerry Chen is printing CS club posters, but the printer charges by "runs" of identical characters.
-          Given a string <strong>S</strong> (no spaces), output run-length encoding as pairs <code>char count</code>.
+          Jerry Chen is printing CS club posters, but the printer charges by runs of identical characters.
+          Given a string <strong>S</strong> (no spaces), output its run-length encoding as pairs <code>char count</code>.
         </p>
 
         <div class="block-title">Input</div>
@@ -83,7 +90,7 @@
         <ul class="list"><li>Encoded pairs on one line</li></ul>
 
         <div class="block-title">Constraints</div>
-        <ul class="list"><li>1 &le; |S| &le; 200000</li></ul>
+        <ul class="list"><li>1 ≤ |S| ≤ 200000</li></ul>
 
         <div class="block-title">Sample Input</div>
         <pre><code>AAABCCCCDD</code></pre>
@@ -92,13 +99,13 @@
       </article>
 
       <article class="problem" id="C">
-        <h3>Problem C - Fundraiser Target</h3>
+        <h3>Problem C — Fundraiser Target</h3>
         <div class="meta">
-          <span class="tag"><strong>CF ~1100-1200</strong></span>
+          <span class="tag">CF ~1100–1200</span>
           <span class="tag">Prefix sums + hashmap</span>
         </div>
         <p>
-          Bryan is counting donations for the CS club. Given an array (can include negatives) and target <strong>X</strong>,
+          Bryan Yao is counting donations for the CS club. Given an array (can include negatives) and target <strong>X</strong>,
           count the number of subarrays with sum exactly <strong>X</strong>.
         </p>
 
@@ -113,9 +120,9 @@
 
         <div class="block-title">Constraints</div>
         <ul class="list">
-          <li>1 &le; N &le; 200000</li>
-          <li>|a<sub>i</sub>| &le; 10<sup>9</sup></li>
-          <li>|X| &le; 10<sup>18</sup></li>
+          <li>1 ≤ N ≤ 200000</li>
+          <li>|a<sub>i</sub>| ≤ 10<sup>9</sup></li>
+          <li>|X| ≤ 10<sup>18</sup></li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -126,14 +133,14 @@
       </article>
 
       <article class="problem" id="D">
-        <h3>Problem D - Topic Variety</h3>
+        <h3>Problem D — Topic Variety</h3>
         <div class="meta">
-          <span class="tag"><strong>CF ~1300-1400</strong></span>
+          <span class="tag">CF ~1300–1400</span>
           <span class="tag">Two pointers + freq map</span>
         </div>
         <p>
-          It's exams season! Michael refuses to study more than <strong>K</strong> different topics in one burst.
-          Given topic IDs <strong>t<sub>1</sub>..t<sub>N</sub></strong>, find the longest contiguous subarray containing at most <strong>K</strong> distinct values.
+          It’s exam season. Given topic IDs <strong>t<sub>1</sub>..t<sub>N</sub></strong>,
+          find the longest contiguous subarray containing at most <strong>K</strong> distinct values.
         </p>
 
         <div class="block-title">Input</div>
@@ -147,9 +154,9 @@
 
         <div class="block-title">Constraints</div>
         <ul class="list">
-          <li>1 &le; N &le; 200000</li>
-          <li>0 &le; K &le; N</li>
-          <li>1 &le; t<sub>i</sub> &le; 10<sup>9</sup></li>
+          <li>1 ≤ N ≤ 200000</li>
+          <li>0 ≤ K ≤ N</li>
+          <li>1 ≤ t<sub>i</sub> ≤ 10<sup>9</sup></li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -160,21 +167,18 @@
       </article>
 
       <article class="problem" id="E">
-        <h3>Problem E - Pep Rally Seating</h3>
+        <h3>Problem E — Pep Rally Seating</h3>
         <div class="meta">
-          <span class="tag"><strong>CF ~1500-1600</strong></span>
+          <span class="tag">CF ~1500–1600</span>
           <span class="tag">Median trick</span>
           <span class="tag">USACO Silver max</span>
         </div>
         <p>
-          Michael and Jerry Chen are trying to form an optimal row seating for a club speaker presentation.
           There are <strong>N</strong> seats in a row. A binary string <strong>S</strong> shows which seats currently have a club student (<code>1</code>) vs not (<code>0</code>).
-        </p>
-        <p>
           In one move, you may swap adjacent seats (swap neighboring characters).
           You want to make <strong>K</strong> club students sit in <strong>K consecutive seats</strong>.
-          Output the minimum adjacent swaps needed, or <code>-1</code> if there are fewer than K ones.
         </p>
+        <p>Output the minimum adjacent swaps needed, or <code>-1</code> if there are fewer than K ones.</p>
 
         <div class="block-title">Input</div>
         <ul class="list">
@@ -187,8 +191,8 @@
 
         <div class="block-title">Constraints</div>
         <ul class="list">
-          <li>1 &le; N &le; 200000</li>
-          <li>1 &le; K &le; N</li>
+          <li>1 ≤ N ≤ 200000</li>
+          <li>1 ≤ K ≤ N</li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -200,13 +204,14 @@
     </section>
 
     <section id="solutions" class="section">
-      <h2>Solutions (Reference)</h2>
+      <div class="section-head">
+        <h2>Solutions (Reference)</h2>
+      </div>
 
       <details>
-        <summary><strong>A - Late Slip Minutes</strong></summary>
-        <p><strong>Time:</strong> O(1). Convert times to minutes and subtract; clamp at 0.</p>
-        <div class="details-code">
-          <pre><code>import sys
+        <summary>A — Late Slip Minutes</summary>
+        <p><strong>Time:</strong> O(1). Convert times to minutes, subtract, clamp at 0.</p>
+        <pre><code>import sys
 
 def to_min(t):
     return int(t[:2]) * 60 + int(t[3:])
@@ -215,27 +220,25 @@ def main():
     start = sys.stdin.readline().strip()
     arrive = sys.stdin.readline().strip()
     ans = to_min(arrive) - to_min(start)
-    print(ans if ans &gt; 0 else 0)
+    print(ans if ans > 0 else 0)
 
 if __name__ == "__main__":
     main()</code></pre>
-        </div>
       </details>
 
       <details>
-        <summary><strong>B - Poster Printer</strong></summary>
+        <summary>B — Poster Printer</summary>
         <p><strong>Time:</strong> O(|S|). Count consecutive runs.</p>
-        <div class="details-code">
-          <pre><code>import sys
+        <pre><code>import sys
 
 def main():
     s = sys.stdin.readline().strip()
     out = []
     i = 0
     n = len(s)
-    while i &lt; n:
+    while i < n:
         j = i
-        while j &lt; n and s[j] == s[i]:
+        while j < n and s[j] == s[i]:
             j += 1
         out.append(s[i])
         out.append(str(j - i))
@@ -244,14 +247,12 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
-        </div>
       </details>
 
       <details>
-        <summary><strong>C - Fundraiser Target</strong></summary>
+        <summary>C — Fundraiser Target</summary>
         <p><strong>Time:</strong> O(N). Prefix sums + frequency map.</p>
-        <div class="details-code">
-          <pre><code>import sys
+        <pre><code>import sys
 from collections import defaultdict
 
 def main():
@@ -272,14 +273,12 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
-        </div>
       </details>
 
       <details>
-        <summary><strong>D - Topic Variety</strong></summary>
-        <p><strong>Time:</strong> O(N). Sliding window with counts of distinct topics.</p>
-        <div class="details-code">
-          <pre><code>import sys
+        <summary>D — Topic Variety</summary>
+        <p><strong>Time:</strong> O(N). Sliding window with counts.</p>
+        <pre><code>import sys
 from collections import defaultdict
 
 def main():
@@ -301,7 +300,7 @@ def main():
             distinct += 1
         cnt[t[r]] += 1
 
-        while distinct &gt; K:
+        while distinct > K:
             cnt[t[l]] -= 1
             if cnt[t[l]] == 0:
                 distinct -= 1
@@ -313,17 +312,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
-        </div>
       </details>
 
       <details>
-        <summary><strong>E - Pep Rally Seating</strong></summary>
+        <summary>E — Pep Rally Seating</summary>
         <p>
-          <strong>Time:</strong> O(N). Let positions of 1s be pos[]. Take each window of K ones.
-          Normalize b[i] = pos[i] - i and use median to minimize sum of absolute distances (adjacent swap cost).
+          <strong>Time:</strong> O(N). Use positions of 1s and a median trick on normalized positions <code>pos[i]-i</code>.
         </p>
-        <div class="details-code">
-          <pre><code>import sys
+        <pre><code>import sys
 
 def main():
     data = sys.stdin.buffer.read().split()
@@ -332,7 +328,7 @@ def main():
 
     pos = [i for i, ch in enumerate(S) if ch == '1']
     m = len(pos)
-    if m &lt; K:
+    if m < K:
         print(-1)
         return
     if K == 1:
@@ -353,8 +349,8 @@ def main():
         mid = (i + j) // 2
         med = b[mid]
 
-        left_cost = med * (mid - i) - (rs(i, mid - 1) if mid &gt; i else 0)
-        right_cost = (rs(mid + 1, j) if mid &lt; j else 0) - med * (j - mid)
+        left_cost = med * (mid - i) - (rs(i, mid - 1) if mid > i else 0)
+        right_cost = (rs(mid + 1, j) if mid < j else 0) - med * (j - mid)
 
         ans = min(ans, left_cost + right_cost)
 
@@ -362,14 +358,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
-        </div>
       </details>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container small muted">
-      <a class="inline" href="../index.html">Home</a> &middot; Contest #3
+    <div class="container footer-row">
+      <div class="muted small"><a class="inline" href="../index.html">Home</a> · Contest #3</div>
+      <div class="muted small">MGCI CS Club Mock Contests (Unofficial)</div>
     </div>
   </footer>
 </body>
