@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contest #3 — MG CS Club Mock Contests (Unofficial)</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div>
+          <h1>Contest #3</h1>
+          <p class="subtitle">Unofficial • Not affiliated with MGCI • A–E difficulty ladder</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        Today’s theme: “small string problems that quietly become math,” and a Problem E that looks innocent until it isn’t.
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html">← Home</a>
+        <a href="#problems">Problems</a>
+        <a href="#solutions">Solutions</a>
+      </nav>
+
+      <div class="toc">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="problems" class="section">
+      <h2>Problems</h2>
+
+      <article class="problem" id="A">
+        <h3>Problem A — Late Slip Minutes</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~800</strong></span>
+          <span class="tag">Implementation</span>
+        </div>
+        <p>
+          Michael Zhang arrives at class and says “I’m not late, the clock is fast.”
+          Given the class start time and arrival time (both <code>HH:MM</code>), output how many minutes late he is.
+          If he arrives early or on time, output <code>0</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>Line 1: start time <code>HH:MM</code></li>
+          <li>Line 2: arrival time <code>HH:MM</code></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minutes late, or <code>0</code></li></ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>09:10
+09:27</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>17</code></pre>
+      </article>
+
+      <article class="problem" id="B">
+        <h3>Problem B — Poster Printer</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1000</strong></span>
+          <span class="tag">String scan</span>
+        </div>
+        <p>
+          Jerry Chen is printing club posters, but the printer charges by “runs” of identical characters.
+          Given a string <strong>S</strong> (no spaces), output run-length encoding as pairs <code>char count</code>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list"><li>One line: string <strong>S</strong></li></ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Encoded pairs on one line</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list"><li>1 ≤ |S| ≤ 200000</li></ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>AAABCCCCDD</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>A 3 B 1 C 4 D 2</code></pre>
+      </article>
+
+      <article class="problem" id="C">
+        <h3>Problem C — Fundraiser Target</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1100–1200</strong></span>
+          <span class="tag">Prefix sums + hashmap</span>
+        </div>
+        <p>
+          Bryan Yao is counting donations. Given an array (can include negatives) and target <strong>X</strong>,
+          count the number of subarrays with sum exactly <strong>X</strong>.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong> <strong>X</strong></li>
+          <li>Second line: <strong>N</strong> integers</li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Number of subarrays summing to X</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>|a<sub>i</sub>| ≤ 10<sup>9</sup></li>
+          <li>|X| ≤ 10<sup>18</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>5 3
+1 2 -1 2 -1</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>4</code></pre>
+      </article>
+
+      <article class="problem" id="D">
+        <h3>Problem D — TOPS Topic Variety</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1300–1400</strong></span>
+          <span class="tag">Two pointers + freq map</span>
+        </div>
+        <p>
+          Michael refuses to study more than <strong>K</strong> different topics in one burst.
+          Given topic IDs <strong>t<sub>1</sub>..t<sub>N</sub></strong>, find the longest contiguous subarray containing at most <strong>K</strong> distinct values.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong> <strong>K</strong></li>
+          <li>Second line: <strong>N</strong> integers</li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Maximum length</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>0 ≤ K ≤ N</li>
+          <li>1 ≤ t<sub>i</sub> ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>8 2
+1 2 1 3 3 2 2 1</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>4</code></pre>
+      </article>
+
+      <article class="problem" id="E">
+        <h3>Problem E — Pep Rally Seating</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1500–1600</strong></span>
+          <span class="tag">Median trick</span>
+          <span class="tag">USACO Silver max</span>
+        </div>
+        <p>
+          Jerry Chen is trying to form a hype “front-row squad” at the pep rally.
+          There are <strong>N</strong> seats in a row. A binary string <strong>S</strong> shows which seats currently have a club student (<code>1</code>) vs not (<code>0</code>).
+        </p>
+        <p>
+          In one move, you may swap adjacent seats (swap neighboring characters).
+          You want to make <strong>K</strong> club students sit in <strong>K consecutive seats</strong>.
+          Output the minimum adjacent swaps needed, or <code>-1</code> if there are fewer than K ones.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong> <strong>K</strong></li>
+          <li>Second line: binary string <strong>S</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minimum swaps, or <code>-1</code></li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>1 ≤ K ≤ N</li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>10 3
+1001010010</code></pre>
+        <div class="block-title">Sample Output</div>
+        <pre><code>2</code></pre>
+      </article>
+    </section>
+
+    <section id="solutions" class="section">
+      <h2>Solutions (Reference)</h2>
+
+      <details>
+        <summary><strong>A — Late Slip Minutes</strong></summary>
+        <p><strong>Time:</strong> O(1). Convert times to minutes and subtract; clamp at 0.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def to_min(t):
+    return int(t[:2]) * 60 + int(t[3:])
+
+def main():
+    start = sys.stdin.readline().strip()
+    arrive = sys.stdin.readline().strip()
+    ans = to_min(arrive) - to_min(start)
+    print(ans if ans &gt; 0 else 0)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>B — Poster Printer</strong></summary>
+        <p><strong>Time:</strong> O(|S|). Count consecutive runs.</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    s = sys.stdin.readline().strip()
+    out = []
+    i = 0
+    n = len(s)
+    while i &lt; n:
+        j = i
+        while j &lt; n and s[j] == s[i]:
+            j += 1
+        out.append(s[i])
+        out.append(str(j - i))
+        i = j
+    print(" ".join(out))
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>C — Fundraiser Target</strong></summary>
+        <p><strong>Time:</strong> O(N). Prefix sums + frequency map.</p>
+        <div class="details-code">
+          <pre><code>import sys
+from collections import defaultdict
+
+def main():
+    data = sys.stdin.buffer.read().split()
+    N = int(data[0])
+    X = int(data[1])
+    a = list(map(int, data[2:]))
+
+    freq = defaultdict(int)
+    freq[0] = 1
+    s = 0
+    ans = 0
+    for v in a:
+        s += v
+        ans += freq[s - X]
+        freq[s] += 1
+    print(ans)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>D — TOPS Topic Variety</strong></summary>
+        <p><strong>Time:</strong> O(N). Sliding window with counts of distinct topics.</p>
+        <div class="details-code">
+          <pre><code>import sys
+from collections import defaultdict
+
+def main():
+    data = list(map(int, sys.stdin.buffer.read().split()))
+    N, K = data[0], data[1]
+    t = data[2:]
+
+    if K == 0:
+        print(0)
+        return
+
+    cnt = defaultdict(int)
+    distinct = 0
+    l = 0
+    best = 0
+
+    for r in range(N):
+        if cnt[t[r]] == 0:
+            distinct += 1
+        cnt[t[r]] += 1
+
+        while distinct &gt; K:
+            cnt[t[l]] -= 1
+            if cnt[t[l]] == 0:
+                distinct -= 1
+            l += 1
+
+        best = max(best, r - l + 1)
+
+    print(best)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>E — Pep Rally Seating</strong></summary>
+        <p>
+          <strong>Time:</strong> O(N). Let positions of 1s be pos[]. Take each window of K ones.
+          Normalize b[i] = pos[i] - i and use median to minimize sum of absolute distances (adjacent swap cost).
+        </p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = sys.stdin.buffer.read().split()
+    N = int(data[0]); K = int(data[1])
+    S = data[2].decode()
+
+    pos = [i for i, ch in enumerate(S) if ch == '1']
+    m = len(pos)
+    if m &lt; K:
+        print(-1)
+        return
+    if K == 1:
+        print(0)
+        return
+
+    b = [pos[i] - i for i in range(m)]
+    pref = [0]
+    for x in b:
+        pref.append(pref[-1] + x)
+
+    def rs(l, r):
+        return pref[r+1] - pref[l]
+
+    ans = 10**30
+    for i in range(0, m - K + 1):
+        j = i + K - 1
+        mid = (i + j) // 2
+        med = b[mid]
+
+        left_cost = med * (mid - i) - (rs(i, mid - 1) if mid &gt; i else 0)
+        right_cost = (rs(mid + 1, j) if mid &lt; j else 0) - med * (j - mid)
+
+        ans = min(ans, left_cost + right_cost)
+
+    print(ans)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small muted">
+      <a class="inline" href="../index.html">Home</a> · Contest #3
+    </div>
+  </footer>
+</body>
+</html>
