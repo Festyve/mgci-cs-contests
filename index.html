@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marc Garneau CS Club Mock Contests (Unofficial)</title>
-  <meta name="description" content="CCC-style practice contests (A-E) with statements, samples, and solutions. Unofficial and not affiliated with MGCI.">
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MGCI CS Club Mock Contests (Unofficial)</title>
+  <meta name="description" content="CCC-style practice contests (A–E) with statements, samples, and solutions. Unofficial and not affiliated with MGCI." />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container">
+    <div class="container header-row">
       <div class="brand">
-        <div class="logo">MG</div>
-        <div>
-          <h1>Marc Garneau CS Club Mock Contests</h1>
-          <p class="subtitle">CCC-style practice contests (A-E) &middot; statements, samples, and solutions</p>
+        <div class="logo" aria-hidden="true">MG</div>
+        <div class="brand-text">
+          <h1 class="site-title">MGCI CS Club Mock Contests</h1>
+          <p class="site-subtitle">CCC-style practice contests (A–E) · statements, samples, and solutions</p>
         </div>
       </div>
-      <div class="notice">
-        <strong>Unofficial:</strong> This site is not affiliated with Marc Garneau Collegiate Institute (MGCI).
-        <br>
-        All content written by <strong>Michael Zhang</strong>, <strong>Jerry Chen</strong>, and <strong>Bryan Yao</strong>.
-      </div>
-      <nav class="nav">
+
+      <nav class="nav" aria-label="Primary">
         <a href="#contests">Contests</a>
-        <a href="#format">Difficulty Ladder</a>
+        <a href="#difficulty">Difficulty</a>
         <a href="#notes">Notes</a>
       </nav>
     </div>
+
+    <div class="container">
+      <aside class="notice" role="note">
+        <div class="notice-title">Unofficial resource</div>
+        <div class="notice-body">
+          This site is <strong>not affiliated</strong> with Marc Garneau Collegiate Institute (MGCI).
+          Content written by <strong>Michael Zhang</strong>, <strong>Jerry Chen</strong>, and <strong>Bryan Yao</strong>.
+        </div>
+      </aside>
+    </div>
   </header>
-  <main class="container">
+
+  <main id="main" class="container">
     <section id="contests" class="section">
-      <h2>Contests</h2>
+      <div class="section-head">
+        <h2>Contests</h2>
+        <p class="section-desc">Each contest contains five problems (A–E) with reference solutions.</p>
+      </div>
+
       <div class="grid">
         <a class="card" href="contests/contest-01.html">
-          <div class="card-top">
+          <div class="card-meta">
             <span class="pill">Contest #1</span>
-            <span class="muted small">5 problems</span>
+            <span class="muted">5 problems</span>
           </div>
-          <h3>Lockers &rarr; Graph Shortcut</h3>
-          <p>Wraparound mod, pairing greedy, bracket-ish badges, room sweep, Dijkstra with one discount.</p>
-          <div class="card-bottom">
-            <span class="linkish">Open contest &rarr;</span>
-          </div>
+          <h3 class="card-title">Lockers → Graph Shortcut</h3>
+          <p class="card-desc">Mod wraparound, greedy pairing, badge constraints, room sweep, Dijkstra with one discount.</p>
+          <div class="card-cta">Open contest →</div>
         </a>
+
         <a class="card" href="contests/contest-02.html">
-          <div class="card-top">
+          <div class="card-meta">
             <span class="pill">Contest #2</span>
-            <span class="muted small">5 problems</span>
+            <span class="muted">5 problems</span>
           </div>
-          <h3>Courtyard Grid &rarr; K-Flip</h3>
-          <p>Time math, 2x2 counting, next greater, interval cover, greedy parity flips.</p>
-          <div class="card-bottom">
-            <span class="linkish">Open contest &rarr;</span>
-          </div>
+          <h3 class="card-title">Courtyard Grid → K-Flip</h3>
+          <p class="card-desc">Time math, 2×2 counting, next greater, interval cover, greedy parity flips.</p>
+          <div class="card-cta">Open contest →</div>
         </a>
+
         <a class="card" href="contests/contest-03.html">
-          <div class="card-top">
+          <div class="card-meta">
             <span class="pill">Contest #3</span>
-            <span class="muted small">5 problems</span>
+            <span class="muted">5 problems</span>
           </div>
-          <h3>Prefix Sums &rarr; Seating Swaps</h3>
-          <p>Minutes late, run-length encode, subarray sums, at-most-K distinct, median trick.</p>
-          <div class="card-bottom">
-            <span class="linkish">Open contest &rarr;</span>
-          </div>
+          <h3 class="card-title">Prefix Sums → Seating Swaps</h3>
+          <p class="card-desc">Minutes late, run-length encoding, subarray sums, at-most-K distinct, median trick.</p>
+          <div class="card-cta">Open contest →</div>
         </a>
       </div>
     </section>
-    <section id="format" class="section">
-      <h2>Difficulty Ladder</h2>
+
+    <section id="difficulty" class="section">
+      <div class="section-head">
+        <h2>Difficulty ladder</h2>
+        <p class="section-desc">Approximate Codeforces ratings (intended as a guideline).</p>
+      </div>
+
       <ul class="list">
-        <li><strong>A:</strong> ~Codeforces 800 rated</li>
-        <li><strong>B:</strong> ~Codeforces 1000 rated</li>
-        <li><strong>C:</strong> ~Codeforces 1100-1200 rated</li>
-        <li><strong>D:</strong> ~Codeforces 1300-1400 rated</li>
-        <li><strong>E:</strong> ~Codeforces 1500-1600 rated</li>
+        <li><strong>A:</strong> ~800</li>
+        <li><strong>B:</strong> ~1000</li>
+        <li><strong>C:</strong> ~1100–1200</li>
+        <li><strong>D:</strong> ~1300–1400</li>
+        <li><strong>E:</strong> ~1500–1600 (USACO Silver max)</li>
       </ul>
     </section>
+
     <section id="notes" class="section">
-      <h2>Notes</h2>
+      <div class="section-head">
+        <h2>Notes</h2>
+      </div>
+
       <ul class="list">
         <li>Solutions are provided as reference code (Python).</li>
-        <li>Problems are intended to be CCC-style with an emphasis on ad-hoc reasoning and core techniques.</li>
-        <li>Have fun and don't get cooked by Problem E.</li>
+        <li>Problems aim to be CCC-style with an emphasis on ad-hoc reasoning and core techniques.</li>
+        <li>Feel free to suggest edits or contribute new contests via pull request.</li>
       </ul>
     </section>
   </main>
+
   <footer class="footer">
-    <div class="container small muted">
-      &copy; <span id="year"></span> Marc Garneau CS Club Mock Contests (Unofficial)
+    <div class="container footer-row">
+      <div class="muted small">© <span id="year"></span> MGCI CS Club Mock Contests (Unofficial)</div>
+      <div class="muted small">Hosted on GitHub Pages</div>
     </div>
   </footer>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
