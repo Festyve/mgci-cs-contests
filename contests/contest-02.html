@@ -3,57 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contest #2 · MGCI CS Club Mock Contests (Unofficial)</title>
-  <meta name="description" content="MGCI CS Club Mock Contest #2 (A–E) with statements, samples, and solutions." />
+  <title>Contest #2 — MG CS Club Mock Contests (Unofficial)</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <div class="container header-row">
+    <div class="container">
       <div class="brand">
         <div class="logo" aria-hidden="true">MG</div>
         <div class="brand-text">
-          <h1 class="site-title">Contest #2</h1>
-          <p class="site-subtitle">Unofficial · Not affiliated with MGCI · A–E difficulty ladder</p>
+          <h1>Contest #2</h1>
+          <p class="subtitle">Unofficial · Not affiliated with MGCI · A–E difficulty ladder</p>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
+      <div class="notice">
+        <strong>Today’s vibe:</strong> lock in, but don’t forget to blink.
+      </div>
+
+      <nav class="nav" aria-label="Contest navigation">
+        <a href="../index.html">← Home</a>
         <a href="#problems">Problems</a>
         <a href="#solutions">Solutions</a>
       </nav>
-    </div>
 
-    <div class="container">
-      <aside class="notice" role="note">
-        <div class="notice-title">Theme</div>
-        <div class="notice-body">Fast scans + classic CCC/USACO silver patterns (stack, greedy cover, parity diff).</div>
-        <div class="toc" aria-label="Problem navigation">
-          <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
-        </div>
-      </aside>
+      <div class="toc" aria-label="Problem quick links">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container">
+  <main class="container">
     <section id="problems" class="section">
-      <div class="section-head">
-        <h2>Problems</h2>
-      </div>
+      <h2>Problems</h2>
 
       <article class="problem" id="A">
         <h3>Problem A — Bell Schedule Add</h3>
         <div class="meta">
-          <span class="tag">CF ~800</span>
+          <span class="tag"><strong>CF ~800</strong></span>
           <span class="tag">Time math</span>
         </div>
         <p>
-          Bryan Yao checks the time and realizes the bell is coming soon.
-          Given a time <code>HH:MM</code> and an integer <strong>x</strong> minutes to add, output the resulting time (wrapping around midnight).
+          Bryan checks the time and realizes the bell is coming faster than expected.
+          Given a time <code>HH:MM</code> and an integer <strong>x</strong> minutes to add, output the resulting time
+          (wrapping around midnight).
         </p>
 
         <div class="block-title">Input</div>
@@ -78,12 +71,13 @@
       <article class="problem" id="B">
         <h3>Problem B — Snowy Courtyard</h3>
         <div class="meta">
-          <span class="tag">CF ~1000</span>
+          <span class="tag"><strong>CF ~1000</strong></span>
           <span class="tag">Grid scan</span>
         </div>
         <p>
-          Jerry Chen looks outside and the courtyard has become a grid of <code>.</code> and <code>#</code>.
-          Count how many <strong>2×2</strong> squares are completely <code>.</code>.
+          Jerry Chen looks outside and the courtyard is basically a pixel grid now.
+          You are given an <strong>R×C</strong> grid of <code>.</code> and <code>#</code>.
+          Count how many <strong>2×2</strong> squares are entirely <code>.</code>.
         </p>
 
         <div class="block-title">Input</div>
@@ -110,18 +104,22 @@
       <article class="problem" id="C">
         <h3>Problem C — Library Next Taller Stack</h3>
         <div class="meta">
-          <span class="tag">CF ~1100–1200</span>
+          <span class="tag"><strong>CF ~1100–1200</strong></span>
           <span class="tag">Monotonic stack</span>
         </div>
         <p>
-          Michael Zhang is stacking textbooks in the library. For each position, find the nearest index to the right with a strictly greater height.
-          If none exists, output <code>0</code>.
+          Michael is stacking textbooks in the library. For each stack, he wants to know the next stack
+          to the right that’s taller.
+        </p>
+        <p>
+          Given heights <strong>h<sub>1</sub>…h<sub>N</sub></strong>, for each <strong>i</strong>, find the smallest index
+          <strong>j &gt; i</strong> such that <strong>h<sub>j</sub> &gt; h<sub>i</sub></strong>. If none exists, output <code>0</code>.
         </p>
 
         <div class="block-title">Input</div>
         <ul class="list">
           <li>First line: integer <strong>N</strong></li>
-          <li>Second line: <strong>N</strong> integers <strong>h<sub>1</sub> ... h<sub>N</sub></strong></li>
+          <li>Second line: <strong>N</strong> integers <strong>h<sub>1</sub> … h<sub>N</sub></strong></li>
         </ul>
 
         <div class="block-title">Output</div>
@@ -143,14 +141,16 @@
       <article class="problem" id="D">
         <h3>Problem D — Garneau Wi-Fi Coverage</h3>
         <div class="meta">
-          <span class="tag">CF ~1300–1400</span>
+          <span class="tag"><strong>CF ~1300–1400</strong></span>
           <span class="tag">Greedy intervals</span>
         </div>
         <p>
-          Positions are <strong>1..L</strong>. Hotspot <strong>i</strong> at <strong>p<sub>i</sub></strong> covers
-          <code>[p<sub>i</sub>-r<sub>i</sub>, p<sub>i</sub>+r<sub>i</sub>]</code> clamped to <code>[1,L]</code>.
-          Cover all positions 1..L with the minimum number of hotspots, or output <code>-1</code> if impossible.
+          The CS club wants Wi-Fi in the hallway (for totally academic reasons).
+          Positions are <strong>1…L</strong>.
+          Hotspot <strong>i</strong> at position <strong>p<sub>i</sub></strong> covers
+          <code>[p<sub>i</sub>−r<sub>i</sub>, p<sub>i</sub>+r<sub>i</sub>]</code>, clamped to <code>[1, L]</code>.
         </p>
+        <p>Cover every position from <strong>1</strong> to <strong>L</strong> using the minimum number of hotspots, or output <code>-1</code>.</p>
 
         <div class="block-title">Input</div>
         <ul class="list">
@@ -181,14 +181,17 @@
       <article class="problem" id="E">
         <h3>Problem E — Locker Light Switch</h3>
         <div class="meta">
-          <span class="tag">CF ~1500–1600</span>
+          <span class="tag"><strong>CF ~1500–1600</strong></span>
           <span class="tag">Greedy + parity diff</span>
           <span class="tag">USACO Silver max</span>
         </div>
         <p>
+          Michael found a “smart locker” system. Unfortunately, it’s not smart.
           You have a binary string <strong>S</strong> of length <strong>N</strong>.
-          An operation chooses <strong>i</strong> (1-indexed) with <strong>1 ≤ i ≤ N-K+1</strong> and flips every bit in
-          <strong>S[i..i+K-1]</strong>. Find the minimum operations to make all bits <code>0</code>, or output <code>-1</code>.
+        </p>
+        <p>
+          An operation chooses an index <strong>i</strong> (1-indexed) with <strong>1 ≤ i ≤ N−K+1</strong> and flips every bit in
+          <strong>S[i…i+K−1]</strong>. Find the minimum operations to make all bits <code>0</code>, or output <code>-1</code>.
         </p>
 
         <div class="block-title">Input</div>
@@ -212,14 +215,12 @@
     </section>
 
     <section id="solutions" class="section">
-      <div class="section-head">
-        <h2>Solutions (Reference)</h2>
-      </div>
+      <h2>Solutions (Reference)</h2>
 
       <details>
-        <summary>A — Bell Schedule Add</summary>
+        <summary><strong>A — Bell Schedule Add</strong></summary>
         <p><strong>Time:</strong> O(1). Convert to minutes, add, mod 1440.</p>
-        <pre><code>import sys
+<pre><code>import sys
 
 def main():
     t = sys.stdin.readline().strip()
@@ -233,9 +234,9 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary>B — Snowy Courtyard</summary>
+        <summary><strong>B — Snowy Courtyard</strong></summary>
         <p><strong>Time:</strong> O(RC). Check each 2×2 block.</p>
-        <pre><code>import sys
+<pre><code>import sys
 
 def main():
     R, C = map(int, sys.stdin.buffer.readline().split())
@@ -252,19 +253,19 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary>C — Library Next Taller Stack</summary>
+        <summary><strong>C — Library Next Taller Stack</strong></summary>
         <p><strong>Time:</strong> O(N). Monotonic stack scanning from right.</p>
-        <pre><code>import sys
+<pre><code>import sys
 
 def main():
     data = list(map(int, sys.stdin.buffer.read().split()))
     N = data[0]
     h = data[1:]
     ans = [0] * N
-    st = []  # indices; heights strictly increasing from top
+    st = []
 
     for i in range(N - 1, -1, -1):
-        while st and h[st[-1]] <= h[i]:
+        while st and h[st[-1]] &lt;= h[i]:
             st.pop()
         ans[i] = (st[-1] + 1) if st else 0
         st.append(i)
@@ -276,9 +277,9 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary>D — Garneau Wi-Fi Coverage</summary>
-        <p><strong>Time:</strong> O(N log N). Greedy interval covering.</p>
-        <pre><code>import sys
+        <summary><strong>D — Garneau Wi-Fi Coverage</strong></summary>
+        <p><strong>Time:</strong> O(N log N). Greedy interval cover.</p>
+<pre><code>import sys
 
 def main():
     data = list(map(int, sys.stdin.buffer.read().split()))
@@ -297,13 +298,13 @@ def main():
     best_r = 0
     used = 0
 
-    while cur <= L:
-        while i < N and intervals[i][0] <= cur:
-            if intervals[i][1] > best_r:
+    while cur &lt;= L:
+        while i &lt; N and intervals[i][0] &lt;= cur:
+            if intervals[i][1] &gt; best_r:
                 best_r = intervals[i][1]
             i += 1
 
-        if best_r < cur:
+        if best_r &lt; cur:
             print(-1)
             return
 
@@ -317,9 +318,9 @@ if __name__ == "__main__":
       </details>
 
       <details>
-        <summary>E — Locker Light Switch</summary>
-        <p><strong>Time:</strong> O(N). Greedy left-to-right + diff array for flip parity.</p>
-        <pre><code>import sys
+        <summary><strong>E — Locker Light Switch</strong></summary>
+        <p><strong>Time:</strong> O(N). Greedy left-to-right + difference parity array.</p>
+<pre><code>import sys
 
 def main():
     data = sys.stdin.buffer.read().split()
@@ -334,7 +335,7 @@ def main():
         flip ^= diff[i]
         bit = (ord(S[i]) - 48) ^ flip
         if bit == 1:
-            if i + K > N:
+            if i + K &gt; N:
                 print(-1)
                 return
             ops += 1
@@ -350,9 +351,8 @@ if __name__ == "__main__":
   </main>
 
   <footer class="footer">
-    <div class="container footer-row">
-      <div class="muted small"><a class="inline" href="../index.html">Home</a> · Contest #2</div>
-      <div class="muted small">MGCI CS Club Mock Contests (Unofficial)</div>
+    <div class="container small muted">
+      <a class="inline" href="../index.html">Home</a> · Contest #2
     </div>
   </footer>
 </body>
