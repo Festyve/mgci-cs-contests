@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contest #1 — Marc Garneau CS Club Mock Contests (Unofficial)</title>
+  <title>Contest #1 — MG CS Club Mock Contests (Unofficial)</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -13,14 +13,23 @@
         <div class="logo">MG</div>
         <div>
           <h1>Contest #1</h1>
-          <p class="subtitle">5 problems (A–E) • Includes solutions • Unofficial (not affiliated with MGCI)</p>
+          <p class="subtitle">Unofficial • Not affiliated with MGCI • A–E difficulty ladder</p>
         </div>
       </div>
+
+      <div class="notice">
+        Some problems feature Jerry Chen, Bryan Yao, and Michael Zhang (not always all three — real life has attendance issues too).
+      </div>
+
       <nav class="nav">
         <a href="../index.html">← Home</a>
         <a href="#problems">Problems</a>
         <a href="#solutions">Solutions</a>
       </nav>
+
+      <div class="toc">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+      </div>
     </div>
   </header>
 
@@ -28,77 +37,411 @@
     <section id="problems" class="section">
       <h2>Problems</h2>
 
-      <div class="notice">
-        Starring: Jerry Chen, Bryan Yao, Michael Zhang. <br />
-        Solve in order (A→E). Suggested time: 75–120 minutes.
-      </div>
+      <!-- A -->
+      <article class="problem" id="A">
+        <h3>Problem A — Locker Loop</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~800</strong></span>
+          <span class="tag">Implementation</span>
+        </div>
+        <p>
+          Jerry Chen is speed-walking the main-floor hallway at Marc Garneau Collegiate.
+          The lockers are numbered <strong>1</strong> to <strong>L</strong> in a loop.
+          Starting at locker <strong>S</strong>, he takes <strong>N</strong> moves.
+          Each move is either <code>+ k</code> (forward) or <code>- k</code> (backward). The hallway wraps around.
+        </p>
 
-      <!-- Replace placeholders below with your real statements -->
-      <article class="section">
-        <h2>Problem A — Title</h2>
-        <p>Statement…</p>
-        <pre><code>Sample Input
-...
-Sample Output
-...</code></pre>
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>L</strong>, <strong>S</strong>, <strong>N</strong></li>
+          <li>Next <strong>N</strong> lines: a character <code>+</code> or <code>-</code>, and integer <strong>k</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>The final locker number</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ L ≤ 10<sup>9</sup></li>
+          <li>1 ≤ S ≤ L</li>
+          <li>1 ≤ N ≤ 200000</li>
+          <li>0 ≤ k ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>10 3 4
++ 4
+- 2
++ 10
+- 5</code></pre>
+
+        <div class="block-title">Sample Output</div>
+        <pre><code>10</code></pre>
       </article>
 
-      <article class="section">
-        <h2>Problem B — Title</h2>
-        <p>Statement…</p>
+      <!-- B -->
+      <article class="problem" id="B">
+        <h3>Problem B — Cafeteria Pairing</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1000</strong></span>
+          <span class="tag">Greedy two pointers</span>
+        </div>
+        <p>
+          At lunch, Michael Zhang and Bryan Yao are trying to seat students in pairs so the cafeteria doesn’t become a jet engine.
+          There are <strong>N</strong> students; student <strong>i</strong> has noise level <strong>a<sub>i</sub></strong>.
+          A pair is valid if the sum of their noise levels is ≤ <strong>C</strong>. Each student can be used at most once.
+          Find the maximum number of valid pairs.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong> and <strong>C</strong></li>
+          <li>Second line: <strong>N</strong> integers <strong>a<sub>1</sub> … a<sub>N</sub></strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Maximum number of pairs</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>1 ≤ a<sub>i</sub> ≤ 10<sup>9</sup></li>
+          <li>1 ≤ C ≤ 2⋅10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>6 10
+2 3 7 8 4 5</code></pre>
+
+        <div class="block-title">Sample Output</div>
+        <pre><code>2</code></pre>
       </article>
 
-      <article class="section">
-        <h2>Problem C — Title</h2>
-        <p>Statement…</p>
+      <!-- C -->
+      <article class="problem" id="C">
+        <h3>Problem C — Holiday Show Badges</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1100–1200</strong></span>
+          <span class="tag">Ad-hoc validation</span>
+        </div>
+        <p>
+          It’s the Holiday Show at MGCI, and the badge printer got… attacked by the Grinch.
+          A badge code is a string <strong>S</strong> (length <strong>N</strong>) consisting of <code>G</code>, <code>M</code>, and <code>?</code>.
+          Each <code>?</code> must be replaced with <code>G</code> or <code>M</code>.
+        </p>
+        <p>
+          A badge code is valid if:
+        </p>
+        <ul class="list">
+          <li>It contains exactly <strong>N/2</strong> <code>G</code> and <strong>N/2</strong> <code>M</code> (so N must be even), and</li>
+          <li>For every prefix, the number of <code>G</code> is at least the number of <code>M</code>.</li>
+        </ul>
+        <p>
+          Determine if it’s possible to replace all <code>?</code> to make <strong>S</strong> valid.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list"><li>One line: string <strong>S</strong></li></ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li><code>YES</code> if possible, otherwise <code>NO</code></li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>S contains only <code>G</code>, <code>M</code>, <code>?</code></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>G??M</code></pre>
+
+        <div class="block-title">Sample Output</div>
+        <pre><code>YES</code></pre>
       </article>
 
-      <article class="section">
-        <h2>Problem D — Title</h2>
-        <p>Statement…</p>
+      <!-- D -->
+      <article class="problem" id="D">
+        <h3>Problem D — Club Room Booking</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1300–1400</strong></span>
+          <span class="tag">Sweep line</span>
+        </div>
+        <p>
+          Marc Garneau Collegiate has one “perfect” classroom that every club wants (mysteriously).
+          Michael Zhang and Jerry Chen collected booking requests.
+          There are <strong>N</strong> bookings; booking <strong>i</strong> occupies <code>[s<sub>i</sub>, e<sub>i</sub>)</code>.
+          Two bookings conflict if they overlap.
+        </p>
+        <p>Find the minimum number of identical rooms needed to schedule everything.</p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integer <strong>N</strong></li>
+          <li>Next <strong>N</strong> lines: integers <strong>s<sub>i</sub></strong> <strong>e<sub>i</sub></strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minimum rooms required</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>1 ≤ N ≤ 200000</li>
+          <li>0 ≤ s<sub>i</sub> &lt; e<sub>i</sub> ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>5
+1 4
+2 5
+7 9
+3 6
+5 8</code></pre>
+
+        <div class="block-title">Sample Output</div>
+        <pre><code>3</code></pre>
       </article>
 
-      <article class="section">
-        <h2>Problem E — Title (Hard)</h2>
-        <p>Statement…</p>
+      <!-- E -->
+      <article class="problem" id="E">
+        <h3>Problem E — Garneau Shortcut Pass</h3>
+        <div class="meta">
+          <span class="tag"><strong>CF ~1500–1600</strong></span>
+          <span class="tag">Dijkstra (2-state)</span>
+          <span class="tag">USACO Silver max</span>
+        </div>
+        <p>
+          Jerry Chen is racing from the front entrance (node <strong>1</strong>) to the gym (node <strong>N</strong>)
+          along hallways modeled as a weighted undirected graph with <strong>M</strong> edges.
+          Traversing an edge of weight <strong>w</strong> costs <strong>w</strong> time.
+        </p>
+        <p>
+          He has one shortcut pass that can be used on at most one edge to reduce its cost to
+          <code>floor(w/2)</code>.
+          Compute the minimum possible travel time from node 1 to node N.
+        </p>
+
+        <div class="block-title">Input</div>
+        <ul class="list">
+          <li>First line: integers <strong>N</strong>, <strong>M</strong></li>
+          <li>Next <strong>M</strong> lines: integers <strong>u</strong>, <strong>v</strong>, <strong>w</strong></li>
+        </ul>
+
+        <div class="block-title">Output</div>
+        <ul class="list"><li>Minimum possible travel time</li></ul>
+
+        <div class="block-title">Constraints</div>
+        <ul class="list">
+          <li>2 ≤ N ≤ 200000</li>
+          <li>1 ≤ M ≤ 200000</li>
+          <li>1 ≤ u, v ≤ N, u ≠ v</li>
+          <li>0 ≤ w ≤ 10<sup>9</sup></li>
+        </ul>
+
+        <div class="block-title">Sample Input</div>
+        <pre><code>5 6
+1 2 10
+2 5 10
+1 3 5
+3 4 5
+4 5 20
+2 3 2</code></pre>
+
+        <div class="block-title">Sample Output</div>
+        <pre><code>12</code></pre>
       </article>
     </section>
 
     <section id="solutions" class="section">
-      <h2>Solutions</h2>
+      <h2>Solutions (Reference)</h2>
 
-      <details class="section">
-        <summary><strong>Problem A Solution</strong></summary>
-        <p>Idea + complexity…</p>
-        <pre><code class="language-python"># code here</code></pre>
+      <details>
+        <summary><strong>A — Locker Loop</strong></summary>
+        <p><strong>Idea:</strong> sum net movement Δ, wrap with modulo. <strong>Time:</strong> O(N).</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    it = sys.stdin.buffer.readline
+    L, S, N = map(int, it().split())
+    delta = 0
+    for _ in range(N):
+        line = it().decode().strip().replace(" ", "")
+        sign = line[0]
+        k = int(line[1:])
+        delta += k if sign == '+' else -k
+    print(((S - 1 + delta) % L) + 1)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
       </details>
 
-      <details class="section">
-        <summary><strong>Problem B Solution</strong></summary>
-        <p>Idea + complexity…</p>
+      <details>
+        <summary><strong>B — Cafeteria Pairing</strong></summary>
+        <p><strong>Idea:</strong> sort + two pointers. If smallest+largest ≤ C, pair them. <strong>Time:</strong> O(N log N).</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = list(map(int, sys.stdin.buffer.read().split()))
+    N, C = data[0], data[1]
+    a = sorted(data[2:])
+    i, j = 0, N - 1
+    ans = 0
+    while i &lt; j:
+        if a[i] + a[j] &lt;= C:
+            ans += 1
+            i += 1
+            j -= 1
+        else:
+            j -= 1
+    print(ans)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
       </details>
 
-      <details class="section">
-        <summary><strong>Problem C Solution</strong></summary>
-        <p>Idea + complexity…</p>
+      <details>
+        <summary><strong>C — Holiday Show Badges</strong></summary>
+        <p>
+          <strong>Idea:</strong> Need exactly N/2 of each and all prefixes have #G ≥ #M.
+          Replace earliest question marks with G until counts match, then fill rest with M, and validate prefixes.
+          <strong>Time:</strong> O(N).
+        </p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    S = sys.stdin.readline().strip()
+    n = len(S)
+    if n % 2 == 1:
+        print("NO")
+        return
+
+    target = n // 2
+    fixedG = S.count('G')
+    fixedM = S.count('M')
+    if fixedG &gt; target or fixedM &gt; target:
+        print("NO")
+        return
+
+    gNeed = target - fixedG
+    out = list(S)
+    for i in range(n):
+        if out[i] == '?':
+            if gNeed &gt; 0:
+                out[i] = 'G'
+                gNeed -= 1
+            else:
+                out[i] = 'M'
+
+    bal = 0
+    for ch in out:
+        bal += 1 if ch == 'G' else -1
+        if bal &lt; 0:
+            print("NO")
+            return
+
+    print("YES" if bal == 0 else "NO")
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
       </details>
 
-      <details class="section">
-        <summary><strong>Problem D Solution</strong></summary>
-        <p>Idea + complexity…</p>
+      <details>
+        <summary><strong>D — Club Room Booking</strong></summary>
+        <p><strong>Idea:</strong> min rooms = max overlap. Sort starts/ends, sweep. <strong>Time:</strong> O(N log N).</p>
+        <div class="details-code">
+          <pre><code>import sys
+
+def main():
+    data = list(map(int, sys.stdin.buffer.read().split()))
+    N = data[0]
+    starts, ends = [], []
+    idx = 1
+    for _ in range(N):
+        s = data[idx]; e = data[idx+1]; idx += 2
+        starts.append(s); ends.append(e)
+    starts.sort()
+    ends.sort()
+
+    i = j = 0
+    cur = best = 0
+    while i &lt; N:
+        if starts[i] &lt; ends[j]:
+            cur += 1
+            best = max(best, cur)
+            i += 1
+        else:
+            cur -= 1
+            j += 1
+    print(best)
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
       </details>
 
-      <details class="section">
-        <summary><strong>Problem E Solution</strong></summary>
-        <p>Idea + complexity…</p>
+      <details>
+        <summary><strong>E — Garneau Shortcut Pass</strong></summary>
+        <p>
+          <strong>Idea:</strong> Dijkstra with 2 states (pass used or not). From state 0 you may traverse normally or use pass once.
+          <strong>Time:</strong> O((N+M) log N).
+        </p>
+        <div class="details-code">
+          <pre><code>import sys, heapq
+
+def main():
+    input = sys.stdin.buffer.readline
+    N, M = map(int, input().split())
+    g = [[] for _ in range(N+1)]
+    for _ in range(M):
+        u, v, w = map(int, input().split())
+        g[u].append((v, w))
+        g[v].append((u, w))
+
+    INF = 10**30
+    dist0 = [INF]*(N+1)
+    dist1 = [INF]*(N+1)
+    dist0[1] = 0
+    pq = [(0, 1, 0)]  # (dist, node, used)
+
+    while pq:
+        d, u, used = heapq.heappop(pq)
+        if used == 0 and d != dist0[u]:
+            continue
+        if used == 1 and d != dist1[u]:
+            continue
+
+        for v, w in g[u]:
+            nd = d + w
+            if used == 0:
+                if nd &lt; dist0[v]:
+                    dist0[v] = nd
+                    heapq.heappush(pq, (nd, v, 0))
+                nd2 = d + (w // 2)
+                if nd2 &lt; dist1[v]:
+                    dist1[v] = nd2
+                    heapq.heappush(pq, (nd2, v, 1))
+            else:
+                if nd &lt; dist1[v]:
+                    dist1[v] = nd
+                    heapq.heappush(pq, (nd, v, 1))
+
+    print(min(dist0[N], dist1[N]))
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </div>
       </details>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container small muted">
-      <a class="muted" href="../index.html">Home</a> ·
-      Written by Michael Zhang, Jerry Chen, Bryan Yao
+      <a class="inline" href="../index.html">Home</a> · Contest #1
     </div>
   </footer>
 </body>
