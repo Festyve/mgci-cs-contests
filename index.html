@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marc Garneau CS Club Mock Contests (Unofficial)</title>
+  <meta name="description" content="CCC-style practice contests (A–E) with statements, samples, and solutions. Unofficial and not affiliated with MGCI." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div>
+          <h1>Marc Garneau CS Club Mock Contests</h1>
+          <p class="subtitle">CCC-style practice contests (A–E) • statements, samples, and solutions</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Unofficial:</strong> This site is not affiliated with Marc Garneau Collegiate Institute (MGCI).
+        <br />
+        Written by <strong>Michael Zhang</strong>, <strong>Jerry Chen</strong>, and <strong>Bryan Yao</strong>.
+      </div>
+
+      <nav class="nav">
+        <a href="#contests">Contests</a>
+        <a href="#about">About</a>
+        <a href="#format">Format</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="contests" class="section">
+      <h2>Contests</h2>
+      <div class="grid">
+        <a class="card" href="contests/contest-01.html">
+          <div class="card-top">
+            <span class="pill">Contest #1</span>
+            <span class="muted">5 problems • A–E</span>
+          </div>
+          <h3>Hallways & Hotspots</h3>
+          <p>Ad-hoc CCC-style set with one USACO Silver / CF ~1500–1600 “hard” problem.</p>
+          <div class="card-bottom">
+            <span class="linkish">Open contest →</span>
+          </div>
+        </a>
+
+        <!-- Duplicate this block for more contests -->
+        <!--
+        <a class="card" href="contests/contest-02.html">
+          <div class="card-top">
+            <span class="pill">Contest #2</span>
+            <span class="muted">5 problems • A–E</span>
+          </div>
+          <h3>Lockers & Lights</h3>
+          <p>Mostly ad-hoc + basic algos. Includes full solutions.</p>
+          <div class="card-bottom">
+            <span class="linkish">Open contest →</span>
+          </div>
+        </a>
+        -->
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        These are unofficial practice contests made for the Marc Garneau CS Club community.
+        Problems aim to feel like CCC-level tasks (especially Junior/Senior early–mid range),
+        with a focus on ad-hoc reasoning and core techniques (two pointers, greedy, prefix sums, stacks).
+      </p>
+    </section>
+
+    <section id="format" class="section">
+      <h2>Format</h2>
+      <ul class="list">
+        <li><strong>A–B:</strong> warmup / implementation</li>
+        <li><strong>C–D:</strong> core CCC techniques</li>
+        <li><strong>E:</strong> ad-hoc “hard” (USACO Silver / CF ~1500–1600), not super algo-heavy</li>
+      </ul>
+      <p class="muted small">
+        Tip: If you want to “run” a contest, set a time limit, solve in order, and share submissions via Discord or Google Form.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small muted">
+      © <span id="year"></span> Marc Garneau CS Club Mock Contests (Unofficial). Built with GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
