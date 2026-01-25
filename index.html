@@ -21,13 +21,13 @@
       <div class="notice">
         <strong>Unofficial:</strong> This site is not affiliated with Marc Garneau Collegiate Institute (MGCI).
         <br />
-        Written by <strong>Michael Zhang</strong>, <strong>Jerry Chen</strong>, and <strong>Bryan Yao</strong>.
+        All content written by <strong>Michael Zhang</strong>, <strong>Jerry Chen</strong>, and <strong>Bryan Yao</strong>.
       </div>
 
       <nav class="nav">
         <a href="#contests">Contests</a>
-        <a href="#about">About</a>
-        <a href="#format">Format</a>
+        <a href="#format">Difficulty Ladder</a>
+        <a href="#notes">Notes</a>
       </nav>
     </div>
   </header>
@@ -35,61 +35,70 @@
   <main class="container">
     <section id="contests" class="section">
       <h2>Contests</h2>
+
       <div class="grid">
         <a class="card" href="contests/contest-01.html">
           <div class="card-top">
             <span class="pill">Contest #1</span>
-            <span class="muted">5 problems • A–E</span>
+            <span class="muted">A–E • 5 problems</span>
           </div>
-          <h3>Hallways & Hotspots</h3>
-          <p>Ad-hoc CCC-style set with one USACO Silver / CF ~1500–1600 “hard” problem.</p>
+          <h3>Lockers → Graph Shortcut</h3>
+          <p>Wraparound mod, pairing greedy, bracket-ish badges, room sweep, Dijkstra with one discount.</p>
           <div class="card-bottom">
             <span class="linkish">Open contest →</span>
           </div>
         </a>
 
-        <!-- Duplicate this block for more contests -->
-        <!--
         <a class="card" href="contests/contest-02.html">
           <div class="card-top">
             <span class="pill">Contest #2</span>
-            <span class="muted">5 problems • A–E</span>
+            <span class="muted">A–E • 5 problems</span>
           </div>
-          <h3>Lockers & Lights</h3>
-          <p>Mostly ad-hoc + basic algos. Includes full solutions.</p>
+          <h3>Courtyard Grid → K-Flip</h3>
+          <p>Time math, 2×2 counting, next greater, interval cover, greedy parity flips.</p>
           <div class="card-bottom">
             <span class="linkish">Open contest →</span>
           </div>
         </a>
-        -->
+
+        <a class="card" href="contests/contest-03.html">
+          <div class="card-top">
+            <span class="pill">Contest #3</span>
+            <span class="muted">A–E • 5 problems</span>
+          </div>
+          <h3>Prefix Sums → Seating Swaps</h3>
+          <p>Minutes late, run-length encode, subarray sums, at-most-K distinct, median trick.</p>
+          <div class="card-bottom">
+            <span class="linkish">Open contest →</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        These are unofficial practice contests made for the Marc Garneau CS Club community.
-        Problems aim to feel like CCC-level tasks (especially Junior/Senior early–mid range),
-        with a focus on ad-hoc reasoning and core techniques (two pointers, greedy, prefix sums, stacks).
-      </p>
+    <section id="format" class="section">
+      <h2>Difficulty Ladder</h2>
+      <ul class="list">
+        <li><strong>A:</strong> ~CF 800</li>
+        <li><strong>B:</strong> ~CF 1000</li>
+        <li><strong>C:</strong> ~CF 1100–1200</li>
+        <li><strong>D:</strong> ~CF 1300–1400</li>
+        <li><strong>E:</strong> ~CF 1500–1600 (USACO Silver topics at most)</li>
+      </ul>
     </section>
 
-    <section id="format" class="section">
-      <h2>Format</h2>
+    <section id="notes" class="section">
+      <h2>Notes</h2>
       <ul class="list">
-        <li><strong>A–B:</strong> warmup / implementation</li>
-        <li><strong>C–D:</strong> core CCC techniques</li>
-        <li><strong>E:</strong> ad-hoc “hard” (USACO Silver / CF ~1500–1600), not super algo-heavy</li>
+        <li>Solutions are provided as reference code (Python).</li>
+        <li>Problems are intended to be CCC-style with an emphasis on ad-hoc reasoning and core techniques.</li>
+        <li>Have fun and don’t get cooked by Problem E.</li>
       </ul>
-      <p class="muted small">
-        Tip: If you want to “run” a contest, set a time limit, solve in order, and share submissions via Discord or Google Form.
-      </p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container small muted">
-      © <span id="year"></span> Marc Garneau CS Club Mock Contests (Unofficial). Built with GitHub Pages.
+      © <span id="year"></span> Marc Garneau CS Club Mock Contests (Unofficial)
     </div>
   </footer>
 
