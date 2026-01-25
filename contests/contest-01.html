@@ -3,76 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contest #1 · MGCI CS Club Mock Contests (Unofficial)</title>
-  <meta name="description" content="MGCI CS Club Mock Contest #1 (A–E) with statements, samples, and solutions." />
+  <title>Contest #1 — MG CS Club Mock Contests (Unofficial)</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <div class="container header-row">
+    <div class="container">
       <div class="brand">
         <div class="logo" aria-hidden="true">MG</div>
         <div class="brand-text">
-          <h1 class="site-title">Contest #1</h1>
-          <p class="site-subtitle">Unofficial · Not affiliated with MGCI · A–E difficulty ladder</p>
+          <h1>Contest #1</h1>
+          <p class="subtitle">Unofficial · Not affiliated with MGCI · A–E difficulty ladder</p>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
+      <div class="notice">
+        <strong>Note:</strong> If you finish early, go hydrate. If you finish Problem E early… please teach the rest of us.
+      </div>
+
+      <nav class="nav" aria-label="Contest navigation">
+        <a href="../index.html">← Home</a>
         <a href="#problems">Problems</a>
         <a href="#solutions">Solutions</a>
       </nav>
-    </div>
 
-    <div class="container">
-      <aside class="notice" role="note">
-        <div class="notice-title">Theme</div>
-        <div class="notice-body">
-          A warm-up contest focused on core techniques (mod arithmetic, greedy, prefix constraints, sweep line, and a classic 2-state shortest path).
-        </div>
-
-        <div class="toc" aria-label="Problem navigation">
-          <a href="#A">A</a>
-          <a href="#B">B</a>
-          <a href="#C">C</a>
-          <a href="#D">D</a>
-          <a href="#E">E</a>
-        </div>
-      </aside>
+      <div class="toc" aria-label="Problem quick links">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container">
+  <main class="container">
     <section id="problems" class="section">
-      <div class="section-head">
-        <h2>Problems</h2>
-      </div>
+      <h2>Problems</h2>
 
       <article class="problem" id="A">
         <h3>Problem A — Locker Loop</h3>
         <div class="meta">
-          <span class="tag">CF ~800</span>
+          <span class="tag"><strong>CF ~800</strong></span>
           <span class="tag">Implementation</span>
         </div>
+
         <p>
           Jerry Chen is speed-walking the main-floor hallway at Marc Garneau Collegiate.
           The lockers are numbered <strong>1</strong> to <strong>L</strong> in a loop.
-          Starting at locker <strong>S</strong>, he takes <strong>N</strong> moves.
-          Each move is either <code>+ k</code> (forward) or <code>- k</code> (backward). The hallway wraps around.
+          Starting at locker <strong>S</strong>, he makes <strong>N</strong> moves.
+        </p>
+        <p>
+          Each move is either <code>+k</code> (forward <em>k</em> lockers) or <code>-k</code> (backward <em>k</em> lockers).
+          The hallway wraps around. Help Jerry Chen find the final locker number!
         </p>
 
-        <div class="block-title">Input</div>
+        <div class="block-title">Input Specification</div>
         <ul class="list">
           <li>First line: integers <strong>L</strong>, <strong>S</strong>, <strong>N</strong></li>
-          <li>Next <strong>N</strong> lines: a character <code>+</code> or <code>-</code>, and integer <strong>k</strong></li>
+          <li>Next <strong>N</strong> lines: a character <code>+</code> or <code>-</code>, followed by an integer <strong>k</strong> (space optional)</li>
         </ul>
 
-        <div class="block-title">Output</div>
-        <ul class="list"><li>The final locker number</li></ul>
+        <div class="block-title">Output Specification</div>
+        <ul class="list"><li>Output the final locker number.</li></ul>
 
         <div class="block-title">Constraints</div>
         <ul class="list">
@@ -84,10 +73,10 @@
 
         <div class="block-title">Sample Input</div>
         <pre><code>10 3 4
-+ 4
-- 2
-+ 10
-- 5</code></pre>
++4
+-2
++10
+-5</code></pre>
 
         <div class="block-title">Sample Output</div>
         <pre><code>10</code></pre>
@@ -96,30 +85,34 @@
       <article class="problem" id="B">
         <h3>Problem B — Cafeteria Pairing</h3>
         <div class="meta">
-          <span class="tag">CF ~1000</span>
-          <span class="tag">Greedy (two pointers)</span>
+          <span class="tag"><strong>CF ~1000</strong></span>
+          <span class="tag">Greedy + two pointers</span>
         </div>
+
         <p>
-          At lunch, Michael Zhang and Bryan Yao are trying to seat students in pairs so the cafeteria stays survivable.
-          There are <strong>N</strong> students; student <strong>i</strong> has noise level <strong>a<sub>i</sub></strong>.
-          A pair is valid if the sum of their noise levels is ≤ <strong>C</strong>. Each student can be used at most once.
+          At lunch, Michael and Bryan are trying to seat <strong>N</strong> students into pairs so the cafeteria doesn't become a jet engine.
+          Student <strong>i</strong> has a “noise level” <strong>a<sub>i</sub></strong>.
+        </p>
+        <p>
+          A pair is valid if the sum of noise levels is ≤ <strong>C</strong>.
+          Each student can be in at most one pair (some can remain unpaired).
           Find the maximum number of valid pairs.
         </p>
 
-        <div class="block-title">Input</div>
+        <div class="block-title">Input Specification</div>
         <ul class="list">
           <li>First line: integers <strong>N</strong> and <strong>C</strong></li>
-          <li>Second line: <strong>N</strong> integers <strong>a<sub>1</sub> ... a<sub>N</sub></strong></li>
+          <li>Second line: <strong>N</strong> integers <strong>a<sub>1</sub> … a<sub>N</sub></strong></li>
         </ul>
 
-        <div class="block-title">Output</div>
-        <ul class="list"><li>Maximum number of pairs</li></ul>
+        <div class="block-title">Output Specification</div>
+        <ul class="list"><li>One integer: maximum number of pairs.</li></ul>
 
         <div class="block-title">Constraints</div>
         <ul class="list">
           <li>1 ≤ N ≤ 200000</li>
           <li>1 ≤ a<sub>i</sub> ≤ 10<sup>9</sup></li>
-          <li>1 ≤ C ≤ 2 × 10<sup>9</sup></li>
+          <li>1 ≤ C ≤ 2 · 10<sup>9</sup></li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -133,31 +126,34 @@
       <article class="problem" id="C">
         <h3>Problem C — Holiday Show Badges</h3>
         <div class="meta">
-          <span class="tag">CF ~1100–1200</span>
+          <span class="tag"><strong>CF ~1100–1200</strong></span>
           <span class="tag">Ad-hoc validation</span>
         </div>
+
         <p>
-          It’s the Holiday Show at MGCI, and the badge printer got… sabotaged.
-          A badge code is a string <strong>S</strong> (length <strong>N</strong>) consisting of <code>G</code>, <code>M</code>, and <code>?</code>.
-          Each <code>?</code> must be replaced with <code>G</code> or <code>M</code>.
+          It’s the Holiday Show at MGCI… and the badge printer got absolutely griefed.
+          A badge code is a string <strong>S</strong> of length <strong>N</strong>, consisting of <code>G</code>, <code>M</code>, and <code>?</code>.
+          Each <code>?</code> must be replaced with either <code>G</code> or <code>M</code>.
         </p>
+
         <p>A badge code is valid if:</p>
         <ul class="list">
-          <li>It contains exactly <strong>N/2</strong> <code>G</code> and <strong>N/2</strong> <code>M</code> (so N must be even), and</li>
-          <li>For every prefix, the number of <code>G</code> is at least the number of <code>M</code>.</li>
+          <li><strong>N</strong> is even, and it contains exactly <strong>N/2</strong> <code>G</code> and <strong>N/2</strong> <code>M</code>, and</li>
+          <li>For every prefix of the string, the number of <code>G</code> is at least the number of <code>M</code>.</li>
         </ul>
+
         <p>Determine if it’s possible to replace all <code>?</code> to make <strong>S</strong> valid.</p>
 
-        <div class="block-title">Input</div>
+        <div class="block-title">Input Specification</div>
         <ul class="list"><li>One line: string <strong>S</strong></li></ul>
 
-        <div class="block-title">Output</div>
-        <ul class="list"><li><code>YES</code> if possible, otherwise <code>NO</code></li></ul>
+        <div class="block-title">Output Specification</div>
+        <ul class="list"><li>Output <code>YES</code> if possible, otherwise <code>NO</code>.</li></ul>
 
         <div class="block-title">Constraints</div>
         <ul class="list">
           <li>1 ≤ N ≤ 200000</li>
-          <li>S contains only <code>G</code>, <code>M</code>, <code>?</code></li>
+          <li><strong>S</strong> contains only <code>G</code>, <code>M</code>, <code>?</code></li>
         </ul>
 
         <div class="block-title">Sample Input</div>
@@ -170,24 +166,29 @@
       <article class="problem" id="D">
         <h3>Problem D — Club Room Booking</h3>
         <div class="meta">
-          <span class="tag">CF ~1300–1400</span>
+          <span class="tag"><strong>CF ~1300–1400</strong></span>
           <span class="tag">Sweep line</span>
         </div>
-        <p>
-          Marc Garneau Collegiate has one “perfect” classroom that every club wants.
-          There are <strong>N</strong> bookings; booking <strong>i</strong> occupies <code>[s<sub>i</sub>, e<sub>i</sub>)</code>.
-          Two bookings conflict if their intervals overlap.
-        </p>
-        <p>Find the minimum number of identical rooms needed to schedule everything.</p>
 
-        <div class="block-title">Input</div>
+        <p>
+          Marc Garneau Collegiate has one specific classroom that many clubs are fighting over.
+          (Don’t ask why.) Michael and Jerry Chen helped collect booking requests.
+        </p>
+        <p>
+          There are <strong>N</strong> bookings. Booking <strong>i</strong> occupies the room from time
+          <strong>s<sub>i</sub></strong> to time <strong>e<sub>i</sub></strong> (inclusive of <strong>s<sub>i</sub></strong>, exclusive of <strong>e<sub>i</sub></strong>),
+          so the interval is <code>[s<sub>i</sub>, e<sub>i</sub>)</code>. Two bookings conflict if their intervals overlap.
+        </p>
+        <p>Find the minimum number of identical rooms required so all bookings can be scheduled.</p>
+
+        <div class="block-title">Input Specification</div>
         <ul class="list">
           <li>First line: integer <strong>N</strong></li>
           <li>Next <strong>N</strong> lines: integers <strong>s<sub>i</sub></strong> <strong>e<sub>i</sub></strong></li>
         </ul>
 
-        <div class="block-title">Output</div>
-        <ul class="list"><li>Minimum rooms required</li></ul>
+        <div class="block-title">Output Specification</div>
+        <ul class="list"><li>One integer: minimum rooms required.</li></ul>
 
         <div class="block-title">Constraints</div>
         <ul class="list">
@@ -210,28 +211,29 @@
       <article class="problem" id="E">
         <h3>Problem E — Garneau Shortcut Pass</h3>
         <div class="meta">
-          <span class="tag">CF ~1500–1600</span>
+          <span class="tag"><strong>CF ~1500–1600</strong></span>
           <span class="tag">Dijkstra (2-state)</span>
           <span class="tag">USACO Silver max</span>
         </div>
+
         <p>
-          Jerry Chen, Bryan Yao, and Michael Zhang are racing from the front entrance (node <strong>1</strong>) to the gym (node <strong>N</strong>)
-          along hallways modeled as a weighted undirected graph with <strong>M</strong> edges. Traversing an edge of weight <strong>w</strong>
-          costs <strong>w</strong> time.
+          Jerry Chen, Bryan, and Michael are racing from the front entrance (node <strong>1</strong>)
+          to the gym (node <strong>N</strong>) through hallways modeled as a weighted undirected graph with
+          <strong>M</strong> edges. Traversing an edge of weight <strong>w</strong> costs <strong>w</strong> time.
         </p>
         <p>
-          They have one shortcut pass that can be used on at most one edge to reduce its cost to <code>floor(w/2)</code>.
-          Compute the minimum possible travel time from node 1 to node N.
+          They have one shortcut pass that can be used on <em>at most one edge</em> to reduce its cost to
+          <code>⌊w/2⌋</code>. Compute the minimum possible travel time from node <strong>1</strong> to node <strong>N</strong>.
         </p>
 
-        <div class="block-title">Input</div>
+        <div class="block-title">Input Specification</div>
         <ul class="list">
           <li>First line: integers <strong>N</strong>, <strong>M</strong></li>
           <li>Next <strong>M</strong> lines: integers <strong>u</strong>, <strong>v</strong>, <strong>w</strong></li>
         </ul>
 
-        <div class="block-title">Output</div>
-        <ul class="list"><li>Minimum possible travel time</li></ul>
+        <div class="block-title">Output Specification</div>
+        <ul class="list"><li>One integer: minimum possible travel time.</li></ul>
 
         <div class="block-title">Constraints</div>
         <ul class="list">
@@ -256,15 +258,13 @@
     </section>
 
     <section id="solutions" class="section">
-      <div class="section-head">
-        <h2>Solutions (Reference)</h2>
-        <p class="section-desc">Shown for learning and self-checking. Try first.</p>
-      </div>
+      <h2>Solutions (Reference)</h2>
 
       <details>
-        <summary>A — Locker Loop</summary>
-        <p><strong>Idea:</strong> sum net movement delta, wrap with modulo. <strong>Time:</strong> O(N).</p>
-        <pre><code>import sys
+        <summary><strong>A — Locker Loop</strong></summary>
+        <p><strong>Idea:</strong> sum net movement Δ, wrap with modulo. <strong>Time:</strong> O(N).</p>
+        <div class="details-code">
+<pre><code>import sys
 
 def main():
     it = sys.stdin.buffer.readline
@@ -279,12 +279,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+        </div>
       </details>
 
       <details>
-        <summary>B — Cafeteria Pairing</summary>
-        <p><strong>Idea:</strong> sort + two pointers. If smallest+largest ≤ C, pair them. <strong>Time:</strong> O(N log N).</p>
-        <pre><code>import sys
+        <summary><strong>B — Cafeteria Pairing</strong></summary>
+        <p><strong>Idea:</strong> sort + two pointers. Pair smallest with largest when possible. <strong>Time:</strong> O(N log N).</p>
+        <div class="details-code">
+<pre><code>import sys
 
 def main():
     data = list(map(int, sys.stdin.buffer.read().split()))
@@ -292,8 +294,8 @@ def main():
     a = sorted(data[2:])
     i, j = 0, N - 1
     ans = 0
-    while i < j:
-        if a[i] + a[j] <= C:
+    while i &lt; j:
+        if a[i] + a[j] &lt;= C:
             ans += 1
             i += 1
             j -= 1
@@ -303,16 +305,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+        </div>
       </details>
 
       <details>
-        <summary>C — Holiday Show Badges</summary>
-        <p>
-          <strong>Idea:</strong> Ensure exact counts and prefix constraint.
-          Fill enough <code>?</code> with <code>G</code> first, then the rest with <code>M</code>, and validate prefixes.
-          <strong>Time:</strong> O(N).
-        </p>
-        <pre><code>import sys
+        <summary><strong>C — Holiday Show Badges</strong></summary>
+        <p><strong>Idea:</strong> fill ? to reach N/2 G’s (rest M), then validate prefix balance. <strong>Time:</strong> O(N).</p>
+        <div class="details-code">
+<pre><code>import sys
 
 def main():
     S = sys.stdin.readline().strip()
@@ -324,7 +324,7 @@ def main():
     target = n // 2
     fixedG = S.count('G')
     fixedM = S.count('M')
-    if fixedG > target or fixedM > target:
+    if fixedG &gt; target or fixedM &gt; target:
         print("NO")
         return
 
@@ -332,7 +332,7 @@ def main():
     out = list(S)
     for i in range(n):
         if out[i] == '?':
-            if gNeed > 0:
+            if gNeed &gt; 0:
                 out[i] = 'G'
                 gNeed -= 1
             else:
@@ -341,7 +341,7 @@ def main():
     bal = 0
     for ch in out:
         bal += 1 if ch == 'G' else -1
-        if bal < 0:
+        if bal &lt; 0:
             print("NO")
             return
 
@@ -349,12 +349,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+        </div>
       </details>
 
       <details>
-        <summary>D — Club Room Booking</summary>
-        <p><strong>Idea:</strong> min rooms = maximum overlap. Sort starts/ends and sweep. <strong>Time:</strong> O(N log N).</p>
-        <pre><code>import sys
+        <summary><strong>D — Club Room Booking</strong></summary>
+        <p><strong>Idea:</strong> minimum rooms = maximum overlap. Sort starts/ends and sweep. <strong>Time:</strong> O(N log N).</p>
+        <div class="details-code">
+<pre><code>import sys
 
 def main():
     data = list(map(int, sys.stdin.buffer.read().split()))
@@ -369,8 +371,8 @@ def main():
 
     i = j = 0
     cur = best = 0
-    while i < N:
-        if starts[i] < ends[j]:
+    while i &lt; N:
+        if starts[i] &lt; ends[j]:
             cur += 1
             best = max(best, cur)
             i += 1
@@ -381,12 +383,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+        </div>
       </details>
 
       <details>
-        <summary>E — Garneau Shortcut Pass</summary>
-        <p><strong>Idea:</strong> Dijkstra with 2 states (pass unused/used). <strong>Time:</strong> O((N+M) log N).</p>
-        <pre><code>import sys, heapq
+        <summary><strong>E — Garneau Shortcut Pass</strong></summary>
+        <p><strong>Idea:</strong> Dijkstra with 2 states: pass unused/used. <strong>Time:</strong> O((N+M) log N).</p>
+        <div class="details-code">
+<pre><code>import sys, heapq
 
 def main():
     input = sys.stdin.buffer.readline
@@ -398,10 +402,10 @@ def main():
         g[v].append((u, w))
 
     INF = 10**30
-    dist0 = [INF]*(N+1)
-    dist1 = [INF]*(N+1)
+    dist0 = [INF]*(N+1)  # pass not used
+    dist1 = [INF]*(N+1)  # pass used
     dist0[1] = 0
-    pq = [(0, 1, 0)]  # (dist, node, used_pass)
+    pq = [(0, 1, 0)]
 
     while pq:
         d, u, used = heapq.heappop(pq)
@@ -413,15 +417,15 @@ def main():
         for v, w in g[u]:
             nd = d + w
             if used == 0:
-                if nd < dist0[v]:
+                if nd &lt; dist0[v]:
                     dist0[v] = nd
                     heapq.heappush(pq, (nd, v, 0))
                 nd2 = d + (w // 2)
-                if nd2 < dist1[v]:
+                if nd2 &lt; dist1[v]:
                     dist1[v] = nd2
                     heapq.heappush(pq, (nd2, v, 1))
             else:
-                if nd < dist1[v]:
+                if nd &lt; dist1[v]:
                     dist1[v] = nd
                     heapq.heappush(pq, (nd, v, 1))
 
@@ -429,14 +433,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+        </div>
       </details>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-row">
-      <div class="muted small"><a class="inline" href="../index.html">Home</a> · Contest #1</div>
-      <div class="muted small">MGCI CS Club Mock Contests (Unofficial)</div>
+    <div class="container small muted">
+      <a class="inline" href="../index.html">Home</a> · Contest #1
     </div>
   </footer>
 </body>
