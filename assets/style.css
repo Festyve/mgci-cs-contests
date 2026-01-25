@@ -1,15 +1,14 @@
 :root {
-  --bg: #fafafa;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --surface-hover: #f5f5f5;
-  --text: #1a1a1a;
-  --text-secondary: #525252;
-  --border: #e5e5e5;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-light: #eff6ff;
-  --code-bg: #f4f4f5;
-  --success: #059669;
+  --surface-alt: #fdf2f4;
+  --text: #2d2d2d;
+  --text-secondary: #6b6b6b;
+  --border: #eaeaea;
+  --accent: #e11d48;
+  --accent-soft: #fda4af;
+  --accent-bg: #fff1f2;
+  --code-bg: #fafafa;
 }
 
 * { box-sizing: border-box; }
@@ -23,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 920px; margin: 0 auto; padding: 24px; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
 
 .site-header {
   background: var(--surface);
@@ -33,19 +32,19 @@ body {
 .brand { display: flex; gap: 14px; align-items: center; }
 
 .logo {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  background: var(--text);
-  color: var(--surface);
+  background: var(--accent);
+  color: #fff;
   font-weight: 700;
-  font-size: 1rem;
-  border-radius: 6px;
+  font-size: 0.95rem;
+  border-radius: 8px;
 }
 
 h1 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   margin: 0;
   font-weight: 600;
   color: var(--text);
@@ -54,89 +53,89 @@ h1 {
 .subtitle {
   margin: 2px 0 0 0;
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
 .notice {
-  margin-top: 18px;
+  margin-top: 16px;
   padding: 12px 14px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 6px;
+  background: var(--accent-bg);
+  border-radius: 8px;
   font-size: 0.9rem;
+  color: var(--text);
 }
 
 .nav {
   display: flex;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 16px;
   flex-wrap: wrap;
 }
 
 .nav a {
   color: var(--text);
   text-decoration: none;
-  padding: 7px 12px;
-  font-size: 0.875rem;
+  padding: 8px 14px;
+  font-size: 0.85rem;
   border-radius: 6px;
   background: var(--surface);
   border: 1px solid var(--border);
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .nav a:hover {
-  background: var(--surface-hover);
-  border-color: #d4d4d4;
+  border-color: var(--accent-soft);
+  background: var(--accent-bg);
 }
 
 .section { margin-top: 32px; }
 
 h2 {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin: 0 0 14px 0;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  color: var(--accent);
 }
 
 h3 { margin: 0 0 8px 0; font-weight: 600; color: var(--text); }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .card {
   display: block;
-  padding: 18px;
+  padding: 20px;
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: var(--text);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .card:hover {
-  border-color: #c4c4c4;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: var(--accent-soft);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
 }
 
 .card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .pill {
   display: inline-block;
   padding: 4px 10px;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: 0.8rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
   font-weight: 600;
   border-radius: 4px;
 }
@@ -152,16 +151,16 @@ h3 { margin: 0 0 8px 0; font-weight: 600; color: var(--text); }
 .card p {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   line-height: 1.5;
 }
 
-.card-bottom { margin-top: 14px; }
+.card-bottom { margin-top: 16px; }
 
 .linkish {
   color: var(--accent);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
 .card:hover .linkish { text-decoration: underline; }
@@ -172,9 +171,9 @@ h3 { margin: 0 0 8px 0; font-weight: 600; color: var(--text); }
 .problem {
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 8px;
-  padding: 18px;
-  margin-top: 14px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 16px;
 }
 
 .problem h3 { font-size: 1.05rem; }
@@ -188,26 +187,28 @@ h3 { margin: 0 0 8px 0; font-weight: 600; color: var(--text); }
 
 .tag {
   background: var(--code-bg);
+  border: 1px solid var(--border);
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
 
-.tag strong { color: var(--text); }
+.tag strong { color: var(--accent); }
 
 .block-title {
-  margin: 18px 0 8px 0;
+  margin: 20px 0 8px 0;
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   font-weight: 600;
 }
 
 pre {
   background: var(--code-bg);
-  border-radius: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   padding: 14px;
   overflow-x: auto;
   margin: 8px 0 0 0;
@@ -215,7 +216,7 @@ pre {
 
 code {
   font-family: "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text);
   white-space: pre;
 }
@@ -223,12 +224,12 @@ code {
 details {
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 8px;
-  padding: 14px 16px;
+  border-radius: 10px;
+  padding: 14px 18px;
   margin-top: 12px;
 }
 
-details[open] { padding-bottom: 16px; }
+details[open] { padding-bottom: 18px; }
 
 summary {
   cursor: pointer;
@@ -258,23 +259,23 @@ details p {
   color: var(--text);
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-weight: 600;
   font-size: 0.85rem;
   border-radius: 6px;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .toc a:hover {
-  background: var(--surface-hover);
-  border-color: #d4d4d4;
+  background: var(--accent-bg);
+  border-color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .footer {
   margin-top: 48px;
   padding: 20px 0;
   border-top: 1px solid var(--border);
-  background: var(--surface);
 }
 
 a.inline {
@@ -286,7 +287,7 @@ a.inline:hover { text-decoration: underline; }
 
 @media (max-width: 600px) {
   .container { padding: 16px; }
-  h1 { font-size: 1.2rem; }
-  .card { padding: 14px; }
-  .problem { padding: 14px; }
+  h1 { font-size: 1.15rem; }
+  .card { padding: 16px; }
+  .problem { padding: 16px; }
 }
